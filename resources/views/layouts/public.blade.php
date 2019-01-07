@@ -59,7 +59,12 @@
                                 </ul>
                             </li>
                             <li><a href="#">发现美食</a></li>
-                            <li><a href="#">美食推荐</a></li>
+                            <li><a href="#">美食日志</a>
+                                <ul class="sub-menu">
+                                    <li><a href="/create">发布美食</a></li>
+                                    <li><a href="/blogList">美食列表</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">关于我们</a></li>
                         </ul>
                     </nav>

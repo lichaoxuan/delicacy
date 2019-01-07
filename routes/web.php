@@ -23,3 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('user/my_center', 'home\UserController@my_center');
 Route::post('user/my_center_cont', 'home\UserController@my_center_cont');
 
+//文章模块
+Route::get('/blogList', 'home\PostController@index');
+
+Route::get('/detail/{id}', 'home\PostController@todetail');
+
+Route::get('/create', 'home\PostController@create_blog');
+
+Route::post('/create/store', 'home\PostController@store');
+Route::post('/reply', 'home\PostController@reply');
