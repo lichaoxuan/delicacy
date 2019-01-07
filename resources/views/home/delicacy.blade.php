@@ -1,4 +1,4 @@
-﻿@extends("home/layout/public")
+﻿@extends("layouts/public")
 @section('title')
     首页
 @endsection

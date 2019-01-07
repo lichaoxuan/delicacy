@@ -19,3 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/blogList', 'home\PostController@index');
+
+Route::get('/detail/{id}', 'home\PostController@todetail');
+
+Route::get('/create', 'home\PostController@create_blog');
+
+Route::post('/create/store', 'home\PostController@store');
+Route::post('/reply', 'home\PostController@reply');
+
+
