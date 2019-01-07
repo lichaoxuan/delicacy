@@ -59,12 +59,7 @@
                                 </ul>
                             </li>
                             <li><a href="#">发现美食</a></li>
-                            <li><a href="#">美食日志</a>
-                                <ul class="sub-menu">
-                                    <li><a href="/create">发布美食</a></li>
-                                    <li><a href="/blogList">美食列表</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="#">美食推荐</a></li>
                             <li><a href="#">关于我们</a></li>
                         </ul>
                     </nav>
@@ -72,11 +67,38 @@
                 <!--Menu end-->
 
                 <!--Header Right Wrap-->
-                <div class="col-12 col-md-9 order-md-2 order-lg-3 col-lg-3">
-                    <div class="header-right-wrap">
+                <div class="col-12 col-md-9 order-md-2 order-lg-3 col-lg-3 d-flex justify-content-center">
+                    <div class="main-menu menu-style-2">
                         <ul>
-                            <li><a href="/user/login">登录</a></li>
-                            <li><a href="/user/register">加入我们</a></li>
+                            @guest
+                                <li><a href="{{ route('login') }}">登录</a></li>
+                                <li><a href="{{ route('register') }}">加入我们</a></li>
+                            @else
+                                <li style="margin-right: 10px;padding-top: 20px">
+                                    <a href="#" style="padding: 0"><img src="{{asset('images/author/forum-author5.png')}}" style="height: 50px;"></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu sub-menu">
+                                        <li><a href="user/my_center">个人中心</a></li>
+                                        <li><a href="javascript:;">我的文章</a></li>
+                                        <li><a href="javascript:;">我的收藏</a></li>
+                                        <li style="height: 40px">
+                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                退出登录
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>
@@ -98,7 +120,7 @@
 
     @yield('main')
 
-    <footer class="footer-section style-2 section bg-theme" style="background-image: url({{asset('images/bg/footer-bg.jpg')}})">
+    <footer class="footer-section style-2 section bg-theme" style="background-image: url(images/bg/footer-bg.jpg)">
 
         <!--Footer Top start-->
         <div class="footer-top section pt-80 pt-lg-70 pt-md-60 pt-sm-50 pt-xs-40 pb-80 pb-lg-70 pb-md-60 pb-sm-15 pb-xs-40">

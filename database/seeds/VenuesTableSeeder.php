@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PostsTableSeeder extends Seeder
+class VenuesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-        factory(App\Post::class, 80)->create();
+        //调用工厂设备，生成数据
+        factory(App\Venue::class, 80)->create();
     }
 }

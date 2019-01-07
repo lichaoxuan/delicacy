@@ -12,20 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('home/delicacy');
+    return view('/home');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/blogList', 'home\PostController@index');
-
-Route::get('/detail/{id}', 'home\PostController@todetail');
-
-Route::get('/create', 'home\PostController@create_blog');
-
-Route::post('/create/store', 'home\PostController@store');
-Route::post('/reply', 'home\PostController@reply');
-
+//个人中心
+Route::get('user/my_center', 'home\UserController@my_center');
+Route::post('user/my_center_cont', 'home\UserController@my_center_cont');
 
