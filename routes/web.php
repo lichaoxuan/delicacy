@@ -31,4 +31,9 @@ Route::get('/detail/{id}', 'home\PostController@todetail');
 Route::get('/create', 'home\PostController@create_blog');
 
 Route::post('/create/store', 'home\PostController@store');
-Route::post('/reply', 'home\PostController@reply');
+Route::post('/reply/{id}', 'home\PostController@reply');
+
+Route::get('/follow/{id}', 'home\PostController@follow');
+Route::get('/unfollow/{id}', 'home\PostController@unfollow');
+
+Route::get('/my_follows', 'home\PostController@my_follows');
