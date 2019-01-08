@@ -11,18 +11,18 @@
     <div class="hero-section section position-relative">
         <div class="hero-slider">
             <!--Hero Item start-->
-            <div class="hero-item hero-item-2" style="background-image: url(images/hero/hero-2.jpg)">
+            <div class="hero-item hero-item-2" style="background-image: url(images/backgrounds/0.jpg)">
                 <div class="container container-1520">
                     <div class="row">
                         <div class="col-12">
 
-                            <!--Hero Content start-->
-                            <div class="hero-content">
-                                <h1>THE WITCHER 3</h1>
-                                <h2>BETTLE BEGAN’S HERE</h2>
-                                <a class="df-btn" href="#">Buy now</a>
-                            </div>
-                            <!--Hero Content end-->
+                            {{--<!--Hero Content start-->--}}
+                            {{--<div class="hero-content">--}}
+                                {{--<h1>劲爆美食</h1>--}}
+                                {{--<h2>与你一起分享！</h2>--}}
+                                {{--<a class="df-btn" href="#">Buy now</a>--}}
+                            {{--</div>--}}
+                            {{--<!--Hero Content end-->--}}
 
                         </div>
                     </div>
@@ -30,16 +30,16 @@
             </div>
             <!--Hero Item end-->
             <!--Hero Item start-->
-            <div class="hero-item hero-item-2" style="background-image: url(images/hero/hero-3.jpg)">
+            <div class="hero-item hero-item-2" style="background-image: url(images/backgrounds/1.jpg)">
                 <div class="container container-1520">
                     <div class="row">
                         <div class="col-12">
 
                             <!--Hero Content start-->
                             <div class="hero-content">
-                                <h1>THE WITCHER 3</h1>
-                                <h2>BETTLE BEGAN’S HERE</h2>
-                                <a class="df-btn" href="#">Buy now</a>
+                                <h1>吃货的部落</h1>
+                                <h2>欢迎你的加入</h2>
+                                <a class="df-btn" href="#">加入我们</a>
                             </div>
                             <!--Hero Content end-->
 
@@ -59,8 +59,8 @@
                 <div class="col-12">
                     <!--Featured Title Start-->
                     <div class="featured-title">
-                        <h2>FEATURED GAMES</h2>
-                        <a href="#">VIEW ALL GAMES</a>
+                        <h2>中国※名菜</h2>
+                        <a href="#">查看所有菜系</a>
                     </div>
                     <!--Featured Title End-->
                 </div>
@@ -68,27 +68,11 @@
             <div class="row no-gutters">
                 <div class="col-12">
                     <div class="featured-slide">
+                        @foreach(\App\Type::all() as $type)
                         <div class="single-featured img-full">
-                            <a href="#"><img src="images/feature/feature-slide-1.jpg" alt=""></a>
+                            <a href="#"><img src="images/feature/{{$type->logo}}" alt=""></a>
                         </div>
-                        <div class="single-featured img-full">
-                            <a href="#"><img src="images/feature/feature-slide-2.jpg" alt=""></a>
-                        </div>
-                        <div class="single-featured img-full">
-                            <a href="#"><img src="images/feature/feature-slide-3.jpg" alt=""></a>
-                        </div>
-                        <div class="single-featured img-full">
-                            <a href="#"><img src="images/feature/feature-slide-4.jpg" alt=""></a>
-                        </div>
-                        <div class="single-featured img-full">
-                            <a href="#"><img src="images/feature/feature-slide-5.jpg" alt=""></a>
-                        </div>
-                        <div class="single-featured img-full">
-                            <a href="#"><img src="images/feature/feature-slide-6.jpg" alt=""></a>
-                        </div>
-                        <div class="single-featured img-full">
-                            <a href="#"><img src="images/feature/feature-slide-4.jpg" alt=""></a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -103,132 +87,37 @@
                 <div class="col-12">
                     <!--Section Title Start-->
                     <div class="section-title">
-                        <h2><span class="color-blue">new</span> games</h2>
+                        <h2><span class="color-blue">美食</span> 推荐</h2>
                     </div>
                     <!--Section Title End-->
                 </div>
             </div>
             <div class="row game-slide">
+                @foreach(\App\Findfood::all() as $finds)
                 <div class="col-4">
                     <!--Single Game Start-->
                     <div class="single-game mb-50">
                         <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game1.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="images/game/{{$finds->photo}}" alt=""></a>
                         </div>
                         <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
+                            <h4><a href="javascript:;">{{$finds->name}}</a></h4>
+                            <span>{{$finds->type->name}}</span>
                         </div>
                     </div>
-                    <!--Single Game End-->
-                    <!--Single Game Start-->
+                    <!--Single Game End--><!--Single Game Start-->
                     <div class="single-game mb-50">
                         <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game4.jpg" alt=""></a>
+                            <a href="javascript:;"><img src="images/game/{{$finds->photo}}" alt=""></a>
                         </div>
                         <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
+                            <h4><a href="javascript:;">{{$finds->name}}</a></h4>
+                            <span>{{$finds->type->name}}</span>
                         </div>
                     </div>
                     <!--Single Game End-->
                 </div>
-                <div class="col-4">
-                    <!--Single Game Start-->
-                    <div class="single-game mb-50">
-                        <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game2.jpg" alt=""></a>
-                        </div>
-                        <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
-                        </div>
-                    </div>
-                    <!--Single Game End-->
-                    <!--Single Game Start-->
-                    <div class="single-game mb-50">
-                        <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game5.jpg" alt=""></a>
-                        </div>
-                        <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
-                        </div>
-                    </div>
-                    <!--Single Game End-->
-                </div>
-                <div class="col-4">
-                    <!--Single Game Start-->
-                    <div class="single-game mb-50">
-                        <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game3.jpg" alt=""></a>
-                        </div>
-                        <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
-                        </div>
-                    </div>
-                    <!--Single Game End-->
-                    <!--Single Game Start-->
-                    <div class="single-game mb-50">
-                        <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game6.jpg" alt=""></a>
-                        </div>
-                        <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
-                        </div>
-                    </div>
-                    <!--Single Game End-->
-                </div>
-                <div class="col-4">
-                    <!--Single Game Start-->
-                    <div class="single-game mb-50">
-                        <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game2.jpg" alt=""></a>
-                        </div>
-                        <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
-                        </div>
-                    </div>
-                    <!--Single Game End-->
-                    <!--Single Game Start-->
-                    <div class="single-game mb-50">
-                        <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game5.jpg" alt=""></a>
-                        </div>
-                        <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
-                        </div>
-                    </div>
-                    <!--Single Game End-->
-                </div>
-                <div class="col-4">
-                    <!--Single Game Start-->
-                    <div class="single-game mb-50">
-                        <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game1.jpg" alt=""></a>
-                        </div>
-                        <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
-                        </div>
-                    </div>
-                    <!--Single Game End-->
-                    <!--Single Game Start-->
-                    <div class="single-game mb-50">
-                        <div class="game-img">
-                            <a href="games-details.html"><img src="images/game/game3.jpg" alt=""></a>
-                        </div>
-                        <div class="game-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>pc/xbox/ps4</span>
-                        </div>
-                    </div>
-                    <!--Single Game End-->
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
