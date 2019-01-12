@@ -82,11 +82,11 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
-
                                     <ul class="dropdown-menu sub-menu">
                                         <li><a href="/user/my_center">个人中心</a></li>
                                         <li><a href="/post/my_blog">我的文章</a></li>
-                                        <li><a href="javascript:;">我的收藏</a></li>
+                                        <li><a href="/my_follows">我的收藏</a></li>
+
                                         <li style="height: 40px">
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                                 退出登录
@@ -198,7 +198,7 @@
 <!-- Placed js at the end of the document so the pages load faster -->
 
 <!-- All jquery file included here -->
-<script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
+<script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/plugins.js')}}"></script>
@@ -207,3 +207,8 @@
 </body>
 
 </html>
+<script>
+    // console.log($);
+
+    $(".alert-warning").delay(2000).hide(0);
+</script>

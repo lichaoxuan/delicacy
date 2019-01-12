@@ -1,6 +1,7 @@
 ﻿@extends("layouts/public")
 @section('title')
-    文章发布页
+    文章发布
+
 @endsection
 <!--Header section end-->
 @section('main')

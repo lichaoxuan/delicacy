@@ -29,6 +29,15 @@
             <div class="row row-25">
                 <div class="col-lg-8">
                     <div class="row">
+                        @if (session('error'))
+                            <div class="alert alert-warning">
+                                <ul>
+
+                                    <li>{{ session('error') }}</li>
+
+                                </ul>
+                            </div>
+                        @endif
                         @foreach($posts as $post)
                         <div class="col-12">
                             <!--Single Blog Post Start-->
@@ -38,14 +47,21 @@
                                 </div>
                                 <div class="blog-content">
                                     <h3><a href="/detail/{{$post->id}}">{{$post->title}}</a></h3>
-                                    <p>{!!str_limit($post->content,100,"...<a href='/detail/$post->id'>查看更多</a>")!!}</p>
+                                    <p>{!!str_limit($post->content,10,"...<a href='/detail/$post->id' style='color:blue;'>查看更多</a>")!!}</p>
                                     <div class="blog-bottom">
                                         <ul class="meta meta-border-bottom">
-                                            <li><a href="#">Smith</a></li> 
-                                            <li>{{$post->created_at}}</li>
-                                            <li><a href="#">25 Comments</a></li>
+                                            <li><a href="#" style="color:#999">{{$post->user->name}}</a></li>
+                                            <li>{{$post->created_at->toFormattedDateString()}}</li>
+                                            <li><a href="#">{{$post->replies->count()}} Comments</a></li>
                                         </ul>
                                     </div>
+                                    <p>
+                                        @if($post->isfollowed())
+                                            <a href="/unfollow/{{$post->id}}" style="color: red">取消收藏</a>
+                                        @else
+                                            <a href="/follow/{{$post->id}}" style="color: deepskyblue">收藏</a>
+                                        @endif
+                                    </p>
                                 </div>
                             </div>
                             <!--Single Blog Post End-->
@@ -90,6 +106,11 @@
         </div>
         
     </div>
+    <script>
+        // console.log($);
+
+        // $(".alert-warning").delay(2000).hide(0);
+    </script>
     <!--Projects section end-->
     @endsection
 

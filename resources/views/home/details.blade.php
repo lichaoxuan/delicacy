@@ -35,9 +35,9 @@
                                     <a href="javascript:;"><img @if($post->title_pic!="") src='{{asset("images/forum/$post->title_pic")}}' @else src="{{asset('images/blog/blog-details-1.jpg')}}" @endif alt=""></a>
                                     <div class="meta-box">
                                         <ul class="meta meta-border-bottom">
-                                            <li><a href="#">{{$post->user_id}}</a></li>
-                                            <li>{{$post->created_at}}</li>
-                                            <li><a href="#">25 Comments</a></li>
+                                            <li><a href="#">{{$post->user->name}}</a></li>
+                                            <li>{{$post->created_at->toFormattedDateString()}}</li>
+                                            <li><a href="#">{{$post->replies->count()}} Comments</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -54,16 +54,17 @@
                             <h4>评论</h4>
 
                             <ul class="comment-list">
-                                @if($replies)
+                                @if($replies->count())
                                     @foreach($replies as $reply)
                                         <li>
                                             <div class="single-comment">
-                                                <div class="image"><img src="{{asset('images/forum/comment-1.jpg')}}" alt=""></div>
+                                                <div class="image" ><img src="{{asset('images/blog/comment-1.jpg')}}" width="120px" height="120px"></div>
+
                                                 <div class="content">
-                                                    <h5>sannai smith</h5>
+                                                    <h5>{{$reply->user->name}}</h5>
                                                     <div class="review-date">
-                                                        <span>30 Janurary, 2018</span>
-                                                        <a href="#" class="reply">Reply</a>
+                                                        <span>{{$reply->created_at->toFormattedDateString()}}</span>
+                                                        {{--<a href="#" class="reply">Reply</a>--}}
                                                     </div>
                                                     <p>{{$reply->content}}</p>
                                                 </div>
@@ -72,18 +73,21 @@
                                     @endforeach
                                 @else
                                     <li>
+
                                         <div class="single-comment">
-                                            <div class="image"><img src="{{asset('images/blog/comment-1.jpg')}}" alt=""></div>
-                                            <div class="content">
-                                              该文章暂时没有回复
+                                            <div class="image"><img src="{{asset('images/blog/timg.jpg')}}" alt=""></div>
+                                            <div class="content" style="font-size: 30px">
+                                              该文章暂时没有评论，抢沙发！
                                             </div>
                                         </div>
                                     </li>
                                @endif
                             </ul>
                             <h4>发表评论</h4>
-                            <form action="/reply" class="comment-form" method="post">
+                            <form action="/reply/{{$post->id}}" class="comment-form" method="post">
+
                                 {{csrf_field()}}
+                                <input type="hidden" name="post_id" value="{{$post->id}}"/>
                                 <div class="row">
 
                                     <div class="col-12 mb-30">   
@@ -91,7 +95,11 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <input type="submit" value="提交">
+                                        @if(\Auth::user())
+                                            <input type="submit" value="send now">
+                                        @else
+                                            <div class="alert alert-info">登录后评论</div>
+                                        @endif
                                     </div>
 
                                 </div>

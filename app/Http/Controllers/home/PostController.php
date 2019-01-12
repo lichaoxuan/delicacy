@@ -20,7 +20,10 @@ class PostController extends Controller
     //文章详情
     public function todetail($id){
         $post = Post::find($id);
+
+
         $replies = $post->replies;
+//        dd($replies);
 //        dd($posts);
 //        dd($replies->toArray());
         return view('home/details',compact("post","replies"));
@@ -34,6 +37,7 @@ class PostController extends Controller
     public function store(Request $request){
 
 //        dd($request->toArray());
+
        // $request->except("_token","files");
         $file = $request->file('title_pic');
         $path=base_path("public\images\/forum\\");
@@ -47,7 +51,6 @@ class PostController extends Controller
             $data["title_pic"]= $file_name;
         }
         $data["user_id"] = Auth::user()->id;
-
         Post::create($data);
 
         return redirect("/blogList");
@@ -61,19 +64,53 @@ class PostController extends Controller
 
         $request->except("_token");
         $data = $request->all();
-        $data["user_id"] = 1;
-        $data["post_id"] = 83;
+        $data["user_id"] = Auth::id();
+
 
         Reply::create($data);
 
         return back();
     }
     //我的文章
-    public function my_blog(){
-        $id=Auth::id();
-        $posts = Post::where("user_id",$id)->orderBy("created_at",'desc')->paginate(5);
+    public function my_blog()
+    {
+        $id = Auth::id();
+        $posts = Post::where("user_id", $id)->orderBy("created_at", 'desc')->paginate(5);
 
-        return view("home/my_blog",compact("posts"));
+        return view("home/my_blog", compact("posts"));
+    }
+    //收藏文章
+    public function follow($id){
+        //1 user_id;
+        //2 venue_id
+        //向user-post 追加记录
+        // 收藏文章
+        if(!Auth::id()){
+            return back()->with('error','请先登录后收藏');
+        }
+
+        Auth::user()->posts()->attach($id);
+
+        return redirect("/blogList");
+
+    }
+
+    public function unfollow($id){
+        //取消收藏
+        Auth::user()->posts()->detach($id);
+//        return redirect("/venue/list");
+        return back();
+
+    }
+    //条转到我的收藏
+    public function my_follows(){
+        //1 user_id
+
+        $posts = Auth::user()->posts()->paginate(5);//不加小括号代表数据
+        
+//        dd($posts);
+        return view("home/my_follows",compact("posts"));
+
     }
 
 
