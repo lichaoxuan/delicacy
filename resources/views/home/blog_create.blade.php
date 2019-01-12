@@ -4,40 +4,20 @@
 @endsection
 <!--Header section end-->
 @section('main')
-    
-    <!--Page Banner Area Start-->
-    <div class="page-banner-area" style="background-image: url(images/bg/page-bg.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="page-content text-center">
-                        <h1>KINGS OF THE <br> WARRIORS</h1>
-                        <a class="df-btn" href="#">Buy now</a>
-                        <ul class="page-breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Forum Create</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Page Banner Area End-->
-    
     <!--Forum Create Area Start-->
     <div class="Forum-create-area section pt-95 pt-lg-75 pt-md-65 pt-sm-55 pt-xs-45 pb-xs-45">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="forum-form">
-                        <form action="/create/store" method="post">
+                        <form action="/create/store" method="post" enctype="multipart/form-data" >
                             {{csrf_field()}}
                             <div class="row">
                                 <div class="col-12">
                                     <!--Single Forum Start-->
                                     <div class="single-input mb-50 mb-sm-30 mb-xs-20">
-                                       <label>topic Title</label>
-                                       <input name="title" type="text" placeholder="Enter topic title here">
+                                       <label>标题</label>
+                                       <input name="title" type="text" placeholder="请输入文章标题">
                                     </div>
                                     <!--Single Forum End-->
                                 </div>
@@ -45,7 +25,7 @@
                                 <div class="col-12">
                                     <!--Single Forum Start-->
                                     <div class="single-input mb-50 mb-sm-30 mb-xs-20">
-                                       <label>topic content</label>
+                                       <label>内容</label>
                                      <textarea id="summernote" name="content"></textarea>
                                     </div>
                                     <!--Single Forum End-->
@@ -58,7 +38,7 @@
                                            <div class="col-md-6">
                                                 <!--Single Forum Start-->
                                                 <div class="single-input mb-50">
-                                                   <label>category</label>
+                                                   <label>菜系</label>
                                                    <select class="wide" name="type_id">
                                                        <option value="0">菜系种类</option>
                                                        <option value="1">川菜</option>
@@ -79,9 +59,17 @@
                                     <!--Single Forum End-->
                                 </div>
                                 <div class="col-12 mb-50">
+                                    <!--Single Forum Start-->
+                                    <div class=" mb-sm-30 mb-xs-20">
+                                        <label style="font-size:24px ;font-weight:500 ">标题图片</label></br>
+                                        <input name="title_pic" type="file" >
+                                    </div>
+                                    <!--Single Forum End-->
+                                </div>
+                                <div class="col-12 mb-50">
                                     <div class="forum-post">
 
-                                        <button class="df-btn">Create Post</button>
+                                        <button class="df-btn">提交</button>
                                     </div>
                                 </div>
                             </div>

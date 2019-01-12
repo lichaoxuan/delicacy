@@ -39,6 +39,11 @@ Route::get('/create', 'home\PostController@create_blog');
 Route::post('/create/store', 'home\PostController@store');
 Route::post('/reply', 'home\PostController@reply');
 
+
 //发现美食
 Route::get('/find_foods', 'home\FoodsController@find_foods');
 Route::post('/foods/get_find_foods', 'home\FoodsController@get_find_foods');
+
+//美食预定
+Route::get('/foods/reserve', 'home\FoodsController@reserve');
+Route::post('/foods/get_reserve', 'home\FoodsController@get_reserve');

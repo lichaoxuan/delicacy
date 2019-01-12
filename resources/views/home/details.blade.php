@@ -32,7 +32,7 @@
                         <div class="col-12">
                             <div class="blog-details">
                                 <div class="blog-img">
-                                    <a href="single-blog.html"><img src="{{asset('images/blog/blog-details-1.jpg')}}" alt=""></a>
+                                    <a href="javascript:;"><img @if($post->title_pic!="") src='{{asset("images/forum/$post->title_pic")}}' @else src="{{asset('images/blog/blog-details-1.jpg')}}" @endif alt=""></a>
                                     <div class="meta-box">
                                         <ul class="meta meta-border-bottom">
                                             <li><a href="#">{{$post->user_id}}</a></li>
@@ -44,26 +44,21 @@
                                 <div class="blog-content">
                                     <h3>{{$post->title}}</h3>
                                     <div>{!!$post->content!!}</div>
-                                    <div class="blog-tags">
-                                        <h5>Tags:</h5> 
-                                        <a href="#">Games</a>
-                                        <a href="#">Playstation</a>
-                                        <a href="#">Xbox</a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="blog-comment-wrap col">
-                            <h4>Comments</h4>
+                            <h4>评论</h4>
 
                             <ul class="comment-list">
                                 @if($replies)
                                     @foreach($replies as $reply)
                                         <li>
                                             <div class="single-comment">
-                                                <div class="image"><img src="{{asset('images/blog/comment-1.jpg')}}" alt=""></div>
+                                                <div class="image"><img src="{{asset('images/forum/comment-1.jpg')}}" alt=""></div>
                                                 <div class="content">
                                                     <h5>sannai smith</h5>
                                                     <div class="review-date">
@@ -86,17 +81,17 @@
                                     </li>
                                @endif
                             </ul>
-                            <h4>Leave a reply</h4>
+                            <h4>发表评论</h4>
                             <form action="/reply" class="comment-form" method="post">
                                 {{csrf_field()}}
                                 <div class="row">
 
                                     <div class="col-12 mb-30">   
-                                        <textarea name="content" placeholder="Message"></textarea>
+                                        <textarea name="content" placeholder="请输入内容"></textarea>
                                     </div>
 
                                     <div class="col-12">
-                                        <input type="submit" value="send now">
+                                        <input type="submit" value="提交">
                                     </div>
 
                                 </div>

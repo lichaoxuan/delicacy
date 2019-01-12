@@ -131,55 +131,55 @@
                     <div class="video-slider-active">
                         <div class="single-video">
                             <div class="video-img video-img-2">
-                                <img src="images/video/video-front1.jpg" alt="">
+                                <img src="images/video/video-01.jpg" alt="">
                                 <div class="video-content content-center">
-                                    <h3>The Magician 3</h3>
-                                    <a class="video-popup" href="https://www.youtube.com/watch?v=BjiaMBk6rHk"><i class="icofont-play-alt-2"></i> view demo</a>
+                                    <h3>大厨教你做美食</h3>
+                                    <a class="video-popup" href="/video/meishi.mp4"><i class="icofont-play-alt-2"></i>查看视频教程</a>
                                 </div>
                             </div>
                         </div>
                         <div class="single-video">
                             <div class="video-img video-img-2">
-                                <img src="images/video/video-front3.jpg" alt="">
+                                <img src="images/video/video-02.jpg" alt="">
                                 <div class="video-content content-center">
-                                    <h3>The Magician 3</h3>
-                                    <a class="video-popup" href="https://www.youtube.com/watch?v=BjiaMBk6rHk"><i class="icofont-play-alt-2"></i> view demo</a>
+                                    <h3>大厨教你做美食</h3>
+                                    <a class="video-popup" href="/video/meishi.mp4"><i class="icofont-play-alt-2"></i>查看视频教程</a>
                                 </div>
                             </div>
                         </div>
                         <div class="single-video">
                             <div class="video-img video-img-2">
-                                <img src="images/video/video-front2.jpg" alt="">
+                                <img src="images/video/video-03.jpg" alt="">
                                 <div class="video-content content-center">
-                                    <h3>The Magician 3</h3>
-                                    <a class="video-popup" href="https://www.youtube.com/watch?v=BjiaMBk6rHk"><i class="icofont-play-alt-2"></i> view demo</a>
+                                    <h3>大厨教你做美食</h3>
+                                    <a class="video-popup" href="/video/meishi.mp4"><i class="icofont-play-alt-2"></i>查看视频教程</a>
                                 </div>
                             </div>
                         </div>
                         <div class="single-video">
                             <div class="video-img video-img-2">
-                                <img src="images/video/video-front4.jpg" alt="">
+                                <img src="images/video/video-04.jpg" alt="">
                                 <div class="video-content content-center">
-                                    <h3>The Magician 3</h3>
-                                    <a class="video-popup" href="https://www.youtube.com/watch?v=BjiaMBk6rHk"><i class="icofont-play-alt-2"></i> view demo</a>
+                                    <h3>大厨教你做美食</h3>
+                                    <a class="video-popup" href="/video/meishi.mp4"><i class="icofont-play-alt-2"></i> 查看视频教程</a>
                                 </div>
                             </div>
                         </div>
                         <div class="single-video">
                             <div class="video-img video-img-2">
-                                <img src="images/video/video-front1.jpg" alt="">
+                                <img src="images/video/video-01.jpg" alt="">
                                 <div class="video-content content-center">
-                                    <h3>The Magician 3</h3>
-                                    <a class="video-popup" href="https://www.youtube.com/watch?v=BjiaMBk6rHk"><i class="icofont-play-alt-2"></i> view demo</a>
+                                    <h3>大厨教你做美食</h3>
+                                    <a class="video-popup" href="/video/meishi.mp4"><i class="icofont-play-alt-2"></i> 查看视频教程</a>
                                 </div>
                             </div>
                         </div>
                         <div class="single-video">
                             <div class="video-img video-img-2">
-                                <img src="images/video/video-front4.jpg" alt="">
+                                <img src="images/video/video-02.jpg" alt="">
                                 <div class="video-content content-center">
-                                    <h3>The Magician 3</h3>
-                                    <a class="video-popup" href="https://www.youtube.com/watch?v=BjiaMBk6rHk"><i class="icofont-play-alt-2"></i> view demo</a>
+                                    <h3>大厨教你做美食</h3>
+                                    <a class="video-popup" href="/video/meishi.mp4"><i class="icofont-play-alt-2"></i> 查看视频教程</a>
                                 </div>
                             </div>
                         </div>
@@ -197,71 +197,19 @@
                 <div class="col-12">
                     <!--Section Title Start-->
                     <div class="section-title">
-                        <h2><span class="color-blue">Games</span> review</h2>
+                        <h2><span class="color-blue">美食</span> 预定</h2>
                     </div>
                     <!--Section Title End-->
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!--Single Games Review Start-->
-                    <div class="single-games-review mb-50">
-                        <div class="review-img">
-                            <a href="games-details.html"><img src="images/review/review1.jpg" alt=""></a>
-                        </div>
-                        <div class="review-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>rating: 9.9</span>
-                            <p>The Elder Scroll is the most popular are ames that your can Latest Mega 2019 games offer you ioous league and also alow you to make youe and smile</p>
-                        </div>
-                    </div>
-                    <!--Single Games Review End-->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <!--Single Games Review Start-->
-                    <div class="single-games-review mb-50">
-                        <div class="review-img">
-                            <a href="games-details.html"><img src="images/review/review2.jpg" alt=""></a>
-                        </div>
-                        <div class="review-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>rating: 9.9</span>
-                            <p>The Elder Scroll is the most popular are ames that your can Latest Mega 2019 games offer you ioous league and also alow you to make youe and smile</p>
-                        </div>
-                    </div>
-                    <!--Single Revent Games End-->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <!--Single Games Review Start-->
-                    <div class="single-games-review mb-50">
-                        <div class="review-img">
-                            <a href="games-details.html"><img src="images/review/review3.jpg" alt=""></a>
-                        </div>
-                        <div class="review-content">
-                            <h4><a href="games-details.html">the elder scroll</a></h4>
-                            <span>rating: 9.9</span>
-                            <p>The Elder Scroll is the most popular are ames that your can Latest Mega 2019 games offer you ioous league and also alow you to make youe and smile</p>
-                        </div>
-                    </div>
-                    <!--Single Games Review End-->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Games Review Section Start-->
-
-    <!--Projects section start-->
-    <div class="newslatter-section section pb-125 pb-lg-105 pb-md-70 pb-sm-85 pb-xs-50">
-        <div class="container">
-
-            <div class="row">
                 <div class="col-12">
                     <!--News Latter Area Start-->
                     <div class="news-latter-area">
                         <div class="news-latter-box">
-                            <h3>SUBSCRIBE OUR <span class="color-blue">NEWSLETTER</span> <br> GET ALL <span class="color-red">LATEST</span> NEWS, UPDATE, <br> <span class="color-blue">VIDEOS</span> AND OFFERS </h3>
+                            <h3>这里<span class="color-blue">可以</span> <br> 预定 <span class="color-red">所有的</span> 美食 <br> 快来预定吧~~~</h3>
                             <form action="#">
-                                <input type="text" placeholder="Enter your email here">
+                                <input type="email" placeholder="请输入邮箱">
                             </form>
                         </div>
                         <div class="news-latter-banner-image">
@@ -271,8 +219,9 @@
                     <!--News Latter Area End-->
                 </div>
             </div>
-
         </div>
-
     </div>
+    <!--Games Review Section Start-->
+
+
 @endsection

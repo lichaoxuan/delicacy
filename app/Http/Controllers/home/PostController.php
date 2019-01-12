@@ -34,9 +34,19 @@ class PostController extends Controller
     public function store(Request $request){
 
 //        dd($request->toArray());
-        $request->except("_token","files");
-        $data = $request->all();
-        $data["user_id"] = 1;
+       // $request->except("_token","files");
+        $file = $request->file('title_pic');
+        $path=base_path("public\images\/forum\\");
+        $data = $request->except("_token");
+        if ( $file->isValid()) { //判断文件是否有效
+
+            //上传图片
+            $ext = $file->getClientOriginalExtension(); //扩展名
+            $file_name = time() . "." . $ext;    //重命名
+            $res=$file->move($path, $file_name); //移动至指定目录
+            $data["title_pic"]= $file_name;
+        }
+        $data["user_id"] = Auth::user()->id;
 
         Post::create($data);
 

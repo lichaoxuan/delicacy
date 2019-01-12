@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\home;
 
 use App\Findfood;
+use App\Reserve;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -32,4 +33,19 @@ class FoodsController extends Controller
         Findfood::create($data);
         return view("/home/find_foods");
     }
+    //加载美食预定页面
+    public function reserve(){
+
+        return view("/home/reserves");
+    }
+    //美食预定
+    public function get_reserve(Request $request){
+        //dd($request->toArray());
+        $data = $request->except("_token");
+
+       Reserve::create($data);
+        return view("/home/reserves");
+
+    }
+
 }

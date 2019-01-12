@@ -54,7 +54,7 @@
                                 </ul>
                             </li>
                             <li><a href="/find_foods">发现美食</a></li>
-                            <li><a href="#">推荐商家</a></li>
+                            <li><a href="/foods/reserve">美食预定</a></li>
                             <li><a href="javascript:;">美食日志</a>
                                 <ul class="sub-menu">
                                     <li><a href="/create">发布美食文章</a></li>
@@ -121,7 +121,7 @@
 
     @yield('main')
 
-    <footer class="footer-section style-2 section bg-theme" style="background-image: url(images/bg/footer-bg.jpg)">
+    <footer class="footer-section style-2 section bg-theme" style="background-image: url(images/bg/footer.jpg)">
 
         <!--Footer Top start-->
         <div class="footer-top section pt-80 pt-lg-70 pt-md-60 pt-sm-50 pt-xs-40 pb-80 pb-lg-70 pb-md-60 pb-sm-15 pb-xs-40">
