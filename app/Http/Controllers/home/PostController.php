@@ -11,16 +11,15 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    //
+    //文章列表页
     public function index(){
-
+//        dd(Auth::User()->detail);
         $posts = Post::orderBy("created_at",'desc')->paginate(5);
 //        dd($posts->toArray());
         return view('home/blogList',compact("posts"));
     }
+    //文章详情
     public function todetail($id){
-
-
         $post = Post::find($id);
 
 
@@ -30,12 +29,12 @@ class PostController extends Controller
 //        dd($replies->toArray());
         return view('home/details',compact("post","replies"));
     }
-
+//发布日志
     public function create_blog(){
 
         return view('home/blog_create');
     }
-
+//存储日志
     public function store(Request $request){
 
 //        dd($request->toArray());
@@ -49,6 +48,7 @@ class PostController extends Controller
 //        dd($request->toArray());
 
     }
+    //回复
     public function reply(Request $request){
 
 //        dd($request->all());
@@ -62,6 +62,7 @@ class PostController extends Controller
 
         return back();
     }
+
     //收藏文章
     public function follow($id){
         //1 user_id;
@@ -86,14 +87,23 @@ class PostController extends Controller
 
     }
     //条转到我的收藏
-    public function my_follows(){
+    public function my_follows()
+    {
         //1 user_id
 
         $posts = Auth::user()->posts()->paginate(5);//不加小括号代表数据
-        
-//        dd($posts);
-        return view("home/my_follows",compact("posts"));
 
+//        dd($posts);
+        return view("home/my_follows", compact("posts"));
+
+    }
+
+    //我的文章
+    public function my_blog(){
+        $id=Auth::id();
+        $posts = Post::where("user_id",$id)->orderBy("created_at",'desc')->paginate(5);
+
+        return view("home/my_blog",compact("posts"));
 
     }
 

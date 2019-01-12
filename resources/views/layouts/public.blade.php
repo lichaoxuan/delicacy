@@ -34,35 +34,31 @@
             <div class="row">
 
                 <!--Logo start-->
-                <div class="col-12 col-md-3 col-lg-3 order-md-1 order-lg-1 mt-20 mb-20">
-                    <div class="logo">
-                        <a href="index.html"><img src="{{asset('images/logo.png')}}" alt=""></a>
+                <div class="col-12 col-md-2 col-lg-1 order-md-1 order-lg-1 mt-20 mb-20">
+                    <div class="logo" >
+                        <a href="/"><img height="48px" src="{{asset('images/logo.png')}}" alt=""></a>
                     </div>
                 </div>
                 <!--Logo end-->
 
                 <!--Menu start-->
-                <div class="col-lg-6 col-12 order-md-3 order-lg-2 d-flex justify-content-center">
+                <div class="col-lg-7 col-12 order-md-3 order-lg-2 d-flex justify-content-center">
                     <nav class="main-menu menu-style-2">
                         <ul>
                             <li><a href="/">美食首页</a></li>
-                            <li><a href="games.html">美食种类</a>
+                            <li><a href="javascript:;">美食种类</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">川菜</a></li>
-                                    <li><a href="#">鲁菜</a></li>
-                                    <li><a href="#">粤菜</a></li>
-                                    <li><a href="#">徽菜</a></li>
-                                    <li><a href="#">苏菜</a></li>
-                                    <li><a href="#">浙菜</a></li>
-                                    <li><a href="#">闽菜</a></li>
-                                    <li><a href="#">湘菜</a></li>
+                                    @foreach(\App\Type::all() as $type)
+                                    <li><a href="#">{{$type->name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
-                            <li><a href="#">发现美食</a></li>
-                            <li><a href="#">美食日志</a>
+                            <li><a href="/find_foods">发现美食</a></li>
+                            <li><a href="#">推荐商家</a></li>
+                            <li><a href="javascript:;">美食日志</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/create">发布美食</a></li>
-                                    <li><a href="/blogList">美食列表</a></li>
+                                    <li><a href="/create">发布美食文章</a></li>
+                                    <li><a href="/blogList">美食文章列表</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">关于我们</a></li>
@@ -80,7 +76,7 @@
                                 <li><a href="{{ route('register') }}">加入我们</a></li>
                             @else
                                 <li style="margin-right: 10px;padding-top: 20px">
-                                    <a href="#" style="padding: 0"><img src="{{asset('images/author/forum-author5.png')}}" style="height: 50px;"></a>
+                                    <a href="user/my_center" style="padding: 0"><img class="img-responsive" @if(\Auth::User()->detail->photo!="") src="/images/author/{{Auth::User()->detail->photo}}" @else src="/images/author/forum-author1.png"  @endif style="height: 50px; border-radius: 50%"></a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
@@ -89,8 +85,12 @@
 
                                     <ul class="dropdown-menu sub-menu">
                                         <li><a href="/user/my_center">个人中心</a></li>
-                                        <li><a href="javascript:;">我的文章</a></li>
+
+
                                         <li><a href="/my_follows">我的收藏</a></li>
+
+                                        <li><a href="/post/my_blog">我的文章</a></li>
+
                                         <li style="height: 40px">
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                                 退出登录

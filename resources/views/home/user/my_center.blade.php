@@ -49,9 +49,9 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div>
-                                    <img class="img-responsive img-circle" style="width: 50px;height: 50px;" @if($details!="") src="/images/author/{{$details->photo}}" @else src="/images/author/forum-author1.png" @endif alt="">
+                                    <img class="img-responsive img-circle" style="width: 50px;height: 50px;" @if($details->photo!="") src="/images/author/{{$details->photo}}" @else src="/images/author/forum-author1.png" @endif alt="">
                                 </div>
-                                <form method="POST" action="#" enctype="multipart/form-data" >
+                                <form method="POST" action="/user/save_icon" enctype="multipart/form-data" >
                                     {{csrf_field()}}
                                     <div class="form-group">
                                         <label for="exampleInputFile">上传头像</label></br>

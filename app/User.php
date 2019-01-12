@@ -33,8 +33,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
     public function posts(){
         return $this->belongsToMany('App\Post','post_user','user_id','post_id');
     }
+
+
+    public function detail(){
+        return $this->hasOne("App\Detail");
+    }
+
+
 
 }
